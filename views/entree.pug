@@ -7,15 +7,14 @@ block content
   -var index = 1;
   div(class="container-fluid")
   div(class="row") 
-  each item in results
-    -var name = item.name;var calories = item.calories;var cost = item.cost;
-    -console.log(item);
-    div(class="col-sm-2" onClick=`buy(${index})`) Name: #{name} 
-    div(class="col-sm-2" onClick=`buy(${index})`) Calories: #{calories} Cost: $#{cost}
-    -index++;
-    script.
-      function buy(index){
-        alert("Purchased item " + index);
-      }
+    each item in results
+      -var name = item.name;var calories = item.calories;var cost = item.cost;
+      -console.log(item);
+      div(class="col-sm-2" onClick=`buy(${index})`) Name: #{name} Calories: #{calories} Cost: $#{cost}
+      -index++;
+      script.
+        function buy(index){
+          alert("Purchased item " + index);
+        }
 
 
